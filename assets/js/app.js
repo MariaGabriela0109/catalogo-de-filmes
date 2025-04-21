@@ -73,7 +73,7 @@ const dados = {
   const idFilme = urlParams.get("id");
   
   if (window.location.pathname.includes("index.html")) {
-    const destaqueEl = document.getElementById("destaqueCarousel");
+    const destaqueEl = document.getElementById("carouselInner");
     const listaFilmes = document.getElementById("listaFilmes");
   
     dados.filmes.forEach((filme, index) => {
