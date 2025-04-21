@@ -69,7 +69,6 @@ const dados = {
     ]
   };
   
-  // Verificar se estamos na página de detalhes e se o parâmetro 'id' está presente
   const urlParams = new URLSearchParams(window.location.search);
   const idFilme = urlParams.get("id");
   
@@ -78,7 +77,6 @@ const dados = {
     const listaFilmes = document.getElementById("listaFilmes");
   
     dados.filmes.forEach((filme, index) => {
-      // Carregar filmes em destaque no carrossel
       if (filme.destaque) {
         destaqueEl.innerHTML += `
           <div class="carousel-item ${index === 0 ? 'active' : ''}">
@@ -91,7 +89,6 @@ const dados = {
         `;
       }
   
-      // Exibir os filmes na lista com link para detalhes
       listaFilmes.innerHTML += `
         <div class="col-md-4 mb-4">
           <div class="card h-100">
@@ -107,7 +104,6 @@ const dados = {
     });
   }
   
-  // Verificar se estamos na página de detalhes e o id foi passado corretamente
   if (window.location.pathname.includes("detalhe.html") && idFilme) {
     const filme = dados.filmes.find(f => f.id == idFilme);
     const container = document.getElementById("detalheFilme");
